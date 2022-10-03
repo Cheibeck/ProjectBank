@@ -1,6 +1,3 @@
-var b = document.getElementById("ok");
-b.addEventListener("click", mandar);
-
 class Destino {
   constructor(name, count, cbu) {
     this.nombre = name;
@@ -23,9 +20,22 @@ function mandar(){
   console.log(s);
   console.log(m);
 }
+
+
+var b = document.getElementById("ok");
+b.addEventListener("click", mandar);
 function imprimirDinero(){
   alert();
 }
+
+
+
+
+
+
+
+
+
 
 //reloj
 function actual() {
