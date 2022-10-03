@@ -12,20 +12,15 @@ destinos.push(new Destino("Pocoyo", 003, 345678912));
 destinos.push(new Destino("Pato", 004, 456789123));
 destinos.push(new Destino("Eli", 005, 567891234));
 
-var e = document.getElementById("enviar");
-b.addEventListener("click", imprimirDinero);
-var m = document.getElementById("dinero").value;
+
 var s = document.getElementById("contactos").value;
-function mandar(){
-  console.log(s);
-  console.log(m);
-}
-
-
+//var m = document.getElementById("dinero").value;
 var b = document.getElementById("ok");
 b.addEventListener("click", mandar);
-function imprimirDinero(){
-  alert();
+
+function mandar(){
+  
+  //console.log(m);
 }
 
 
