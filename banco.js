@@ -17,6 +17,8 @@ function paso(){
       }
       else{
         document.write("incorrecto");
+        i=3;
+        setTimeout( function() { window.location.href = "Banco.html"; }, 2000 );
       }
     }
 }

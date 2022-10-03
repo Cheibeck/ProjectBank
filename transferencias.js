@@ -1,36 +1,77 @@
 class Destino {
-  constructor(name, count, cbu) {
+  constructor(name, lastname, count, type, cbu, address, phone) {
     this.nombre = name;
+    this.apellido = lastname;
     this.cuenta = count;
+    this.tipo = type;
     this.cbuu = cbu;
+    this.direccion = address;
+    this.telefono = phone;
   }
 }
-const destinos = [];
-destinos.push(new Destino("TOPO", 001, 123456789));
-destinos.push(new Destino("Joaquin", 002, 234567891));
-destinos.push(new Destino("Pocoyo", 003, 345678912));
-destinos.push(new Destino("Pato", 004, 456789123));
-destinos.push(new Destino("Eli", 005, 567891234));
+const destinos = []
+destinos.push(new Destino("TOPO", "Gomez", "001", "a sueldo", 12340000056789, "pascual toso 1090", 2613653368))
+destinos.push(new Destino("Joaquin", "Gomez", "002", "corriente", 2345600000007891, "pascual toso 1090", 2613675552))
+destinos.push(new Destino("Pocoyo", "pelado", "003", "en dolares", 345678900000012, "calle falsa 123", 55513444))
+destinos.push(new Destino("Pato", "amarillo", "004", "en dolares", 45678900000123, "calle falsa 123", 55513444))
+destinos.push(new Destino("Eli", "rosa", "005", "en dolares", 56789100000234, "calle falsa 123", 55513444))
 
-
-var s = document.getElementById("contactos").value;
-//var m = document.getElementById("dinero").value;
-var b = document.getElementById("ok");
-b.addEventListener("click", mandar);
+var b = document.getElementById("ok")
+b.addEventListener("click", mandar) 
+var x = 0
 
 function mandar(){
+  var s = document.getElementById("contactos").value
+  if(s == destinos[0].nombre){
+    x = 0
+    imprimir()
+  }
+  else if(s == destinos[1].nombre){  
+    x = 1
+    imprimir()
+  }
+  else if(s == destinos[2].nombre){  
+    x = 2
+    imprimir()
+  }
+  else if(s == destinos[3].nombre){  
+    x = 3
+    imprimir()
+  }
+  else if(s == destinos[4].nombre){  
+    x = 4
+    imprimir()
+  }
+}
+function imprimir(){
+  const userDest = document.createElement("body")
+  userDest.innerText = "Cuenta: " + destinos[x].cuenta + " Nombre: " + destinos[x].nombre + " CBU: " + destinos[x].cbuu
+  document.body.append(userDest)
   
-  //console.log(m);
+  var seg = document.createElement("button")
+  seg.innerText = "ok"
+  seg.id = 12
+  document.body.append(seg)
+  var o = document.getElementById("12")  
+  o.addEventListener("click", final)
 }
 
+function final(){
+  document.write("va a realizar una trasferencia al siguiente destinatario <br>")
+  document.write("<br>Nombre de Destinatario: " + destinos[x].nombre + "<br>")
+  document.write("Apellido de Destinatario: " + destinos[x].apellido + "<br>")
+  document.write("CBU: " + destinos[x].cbuu + "<br>")
+  document.write("Nro de Cuenta:" + destinos[x].cuenta + "<br>")
+  document.write("Tipo de Cuenta:" + destinos[x].tipo + "<br>")
+  document.write("Telefono:" + destinos[x].telefono + "<br>")
+  document.write("Direccion:" + destinos[x].direccion + "<br>")
 
+  f = prompt("Se realizo una trasferencia a: " + destinos[x].nombre + " " + destinos[x].apellido, "")
+  console.log(f)
 
+  document.write("<br> se envio correctamente: $ " + f)
 
-
-
-
-
-
+}
 
 //reloj
 function actual() {
