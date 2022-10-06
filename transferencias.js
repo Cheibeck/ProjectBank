@@ -19,7 +19,7 @@ destinos.push(new Destino("Eli", "rosa", "005", "en dolares", 56789100000234, "c
 var b = document.getElementById("ok")
 b.addEventListener("click", mandar) 
 var x = 0
-
+var sal = document.getElementById("22").value
 function mandar(){
   var s = document.getElementById("contactos").value
   if(s == destinos[0].nombre){
@@ -66,11 +66,18 @@ function final(){
   document.write("Telefono:" + destinos[x].telefono + "<br>")
   document.write("Direccion:" + destinos[x].direccion + "<br>")
 
-  f = prompt("Se realizo una trasferencia a: " + destinos[x].nombre + " " + destinos[x].apellido, "")
+  f = prompt("ingrese monto a transferir a: " + destinos[x].nombre + " " + destinos[x].apellido, "")
   console.log(f)
+  console.log(sal)
 
-  document.write("<br> se envio correctamente: $ " + f)
-
+  if(f < sal){
+    document.write("<br> se envio correctamente: $ " + f)
+    document.write("<br> saldo: $ " + (sal - f))
+  }
+  else{
+    alert("no hay tanto dinero")
+    setTimeout( function() { window.location.href = "pantalla_logueo.html"; }, 1000 );
+  }
 }
 
 //reloj
