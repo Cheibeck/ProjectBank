@@ -61,10 +61,10 @@ function final(){
   document.write("<br>Nombre de Destinatario: " + destinos[x].nombre + "<br>")
   document.write("Apellido de Destinatario: " + destinos[x].apellido + "<br>")
   document.write("CBU: " + destinos[x].cbuu + "<br>")
-  document.write("Nro de Cuenta:" + destinos[x].cuenta + "<br>")
-  document.write("Tipo de Cuenta:" + destinos[x].tipo + "<br>")
-  document.write("Telefono:" + destinos[x].telefono + "<br>")
-  document.write("Direccion:" + destinos[x].direccion + "<br>")
+  document.write("Nro de Cuenta: " + destinos[x].cuenta + "<br>")
+  document.write("Tipo de Cuenta: " + destinos[x].tipo + "<br>")
+  document.write("Telefono: " + destinos[x].telefono + "<br>")
+  document.write("Direccion: " + destinos[x].direccion + "<br>")
 
   f = prompt("ingrese monto a transferir a: " + destinos[x].nombre + " " + destinos[x].apellido, "")
   console.log(f)
@@ -86,6 +86,10 @@ function actual() {
   hora=fecha.getHours(); //hora actual
   minuto=fecha.getMinutes(); //minuto actual
   segundo=fecha.getSeconds(); //segundo actual
+          if(hora < 9 || hora > 20){
+            alert("horario permitido para hacer transferencias: de 9 a 20")
+            setTimeout( function() { window.location.href = "Banco.html"; }, 500 );
+          }
          if (hora<10) { //dos cifras para la hora
             hora="0"+hora;
             }
@@ -97,11 +101,11 @@ function actual() {
             }
          //ver en el recuadro del reloj:
          mireloj = hora+" : "+minuto+" : "+segundo;
-				 return mireloj;
+         return mireloj;
 }
 function actualizar() { //función del temporizador
    mihora=actual(); //recoger hora actual
    mireloj=document.getElementById("reloj"); //buscar elemento reloj
    mireloj.innerHTML=mihora; //incluir hora en elemento
-	 }
+}
 setInterval(actualizar,1000); //iniciar temporizador
