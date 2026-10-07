@@ -18,6 +18,9 @@ npm run dev
 
 Para generar una compilación de producción, ejecutá `npm run build`.
 
+La aplicación se publica automáticamente en GitHub Pages al subir cambios a
+`main`: https://cheibeck.github.io/ProjectBank/
+
 ## Acceso de prueba
 
 - Usuario: `Jhenny` (también `Isabella` o `Agustin`)
